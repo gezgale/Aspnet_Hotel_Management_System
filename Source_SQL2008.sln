@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Source_SQL2008_Pardahkt", ".", "{F72515C2-52F4-40EF-8DEF-CE56E8B50743}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Source_SQL2000"
+		Debug.AspNetCompiler.PhysicalPath = "..\Source_SQL2008_Pardahkt\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Source_SQL2000\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Source_SQL2000"
+		Release.AspNetCompiler.PhysicalPath = "..\Source_SQL2008_Pardahkt\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Source_SQL2000\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1916"
+		SlnRelativePath = "..\Source_SQL2008_Pardahkt\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F72515C2-52F4-40EF-8DEF-CE56E8B50743}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{F72515C2-52F4-40EF-8DEF-CE56E8B50743}.Debug|.NET.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

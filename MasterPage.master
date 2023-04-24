@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>سیستم رزرو هتل آنلاین</title>
+<link rel="stylesheet" href="CssStyle/bootstrap.min.css" crossorigin="anonymous"/>
+</head>
+<body dir="rtl">
+    <form id="form1" runat="server">
+    <div style="margin-top: 2px">
+        <table align="center" style="width: 572px; border-right: black thin dashed; border-top: black thin dashed; border-left: black thin dashed; border-bottom: black thin dashed; margin-top: 5px;" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="3">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/MainBanner.jpg" /></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="vertical-align: top; background-color: lemonchiffon; text-align: right">
+                    <table width="100%">
+                        <tr>
+                            <td style="vertical-align: top; width: 129px; text-align: center; background-color: inactivecaption;">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="5" DataKeyNames="LinksID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" ShowHeader="False" Width="132px" Font-Bold="False" Font-Names="Tahoma" Font-Size="8pt" Font-Underline="False" style="margin: 10px">
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <Columns>
+                            <asp:BoundField DataField="LinksID" HeaderText="LinksID" InsertVisible="False" ReadOnly="True"
+                                SortExpression="LinksID" Visible="False" />
+                            <asp:BoundField DataField="LinkAddress" HeaderText="LinkAddress" SortExpression="LinkAddress"
+                                Visible="False" />
+                            <asp:BoundField DataField="LinkDescription" HeaderText="LinkDescription" SortExpression="LinkDescription"
+                                Visible="False" />
+                            <asp:HyperLinkField DataNavigateUrlFields="LinkAddress" DataTextField="LinkDescription" />
+                        </Columns>
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <EditRowStyle BackColor="#999999" />
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HotelConString %>" SelectCommand="SELECT LinksID, LinkAddress, LinkDescription, LinkPermiss, LinkSort FROM tblLinks ORDER BY LinkSort">
+                                </asp:SqlDataSource>
+                                <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Label" Font-Names="Tahoma" Font-Size="10pt" CssClass="text-lowercase"></asp:Label>
+                                <br />
+                            </td>
+                            <td colspan="2">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="vertical-align: top; background-color: azure; text-align: center; height: 22px; background-image: url(images/index_35.jpg)">
+                    <span style="font-size: 7pt; font-family: Tahoma">سیستم رزرو هتل - نسخه
+                        1.1<br />
+                        تکنولوژی ASP.NET</span></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

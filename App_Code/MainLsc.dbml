@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HotelOnline" Class="MainLscDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local)\r22;Initial Catalog=HotelOnline;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HotelConString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VIEW1" Member="VIEW1s">
+    <Type Name="VIEW1">
+      <Column Name="TedadeKarbaran" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TedadeOtaghHa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtaghhaieRezerveShode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtaghhaieTahvilShodeh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtaghhaieAzad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DariaftieKol" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BazDidha" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblRooms" Member="XtblRooms">
+    <Type Name="XtblRoom">
+      <Column Name="RoomID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomTypeDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RoomBed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceOfPerNight" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RoomStatuse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomStatuseDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RoomFloorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblCountOfPerGroup" Member="XtblCountOfPerGroups">
+    <Type Name="XtblCountOfPerGroup">
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoomFloorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountOfUse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblCustomerPayments" Member="XtblCustomerPayments">
+    <Type Name="XtblCustomerPayment">
+      <Column Name="PaymentRowID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PayedPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDateShamsi" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDescription" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PayForTypeID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PayState" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblCustomerTookedRooms" Member="XtblCustomerTookedRooms">
+    <Type Name="XtblCustomerTookedRoom">
+      <Column Name="EnID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameCS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SnameCS" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="RoomID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomTypeDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RoomBed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceOfPerNight" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RoomFloorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EnteredDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FirstPayment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StayNights" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ToTalPriceOfStay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PriceOfOtherServices" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DiscountOfCustomer" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalDebtPayment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TasviehBit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StateOfMainRoom" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="EntDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ExtDate" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblReserverForCombo" Member="XtblReserverForCombos">
+    <Type Name="XtblReserverForCombo">
+      <Column Name="RezrveID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameSname" Type="System.String" DbType="NVarChar(308)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XtblRoomFloorType" Member="XtblRoomFloorTypes">
+    <Type Name="XtblRoomFloorType">
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomFloorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCounter" Member="tblCounters">
+    <Type Name="tblCounter">
+      <Column Name="CntID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CntCount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountryCities" Member="tblCountryCities">
+    <Type Name="tblCountryCity">
+      <Column Name="CountryCityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="tblCountryCity_tblServicesDef" Member="tblServicesDefs" ThisKey="CountryCityID" OtherKey="FromCityID" Type="tblServicesDef" />
+      <Association Name="tblCountryCity_tblServicesDef1" Member="tblServicesDefs1" ThisKey="CountryCityID" OtherKey="ToCityID" Type="tblServicesDef" />
+      <Association Name="tblCountryCode_tblCountryCity" Member="tblCountryCode" ThisKey="CountryID" OtherKey="CountryCodeID" Type="tblCountryCode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountryCodes" Member="tblCountryCodes">
+    <Type Name="tblCountryCode">
+      <Column Name="CountryCodeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="tblCountryCode_tblCountryCity" Member="tblCountryCities" ThisKey="CountryCodeID" OtherKey="CountryID" Type="tblCountryCity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCustomerPayments" Member="tblCustomerPayments">
+    <Type Name="tblCustomerPayment">
+      <Column Name="PaymentRowID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PayedPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDateShamsi" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PayedDescription" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PayForTypeID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="tblUser_tblCustomerPayment" Member="tblUser" ThisKey="CustomerUserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEECus" Member="tblEECus">
+    <Type Name="tblEECus">
+      <Column Name="EnID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EnteredDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstPayment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StayNights" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceOfPerNight" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ToTalPriceOfStay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PriceOfOtherServices" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DiscountOfCustomer" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalDebtPayment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TasviehBit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblRoom_tblEECus" Member="tblRoom" ThisKey="RoomID" OtherKey="RoomID" Type="tblRoom" IsForeignKey="true" />
+      <Association Name="tblUser_tblEECus" Member="tblUser" ThisKey="CustomerID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLinks" Member="tblLinks">
+    <Type Name="tblLink">
+      <Column Name="LinksID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LinkAddress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LinkDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LinkPermiss" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkSort" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMonthHa" Member="tblMonthHas">
+    <Type Name="tblMonthHa">
+      <Column Name="MonthID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MonthName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRezerveRoom" Member="tblRezerveRooms">
+    <Type Name="tblRezerveRoom">
+      <Column Name="RezrveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblRoom_tblRezerveRoom" Member="tblRoom" ThisKey="RoomID" OtherKey="RoomID" Type="tblRoom" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tblUser_tblRezerveRoom" Member="tblUser" ThisKey="CustomerID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRezerveTickets" Member="tblRezerveTickets">
+    <Type Name="tblRezerveTicket">
+      <Column Name="RezerveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RezerverID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QuanTity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FishNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="TaiidBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblServicesDef_tblRezerveTicket" Member="tblServicesDef" ThisKey="ServiceID" OtherKey="ServiceID" Type="tblServicesDef" IsForeignKey="true" />
+      <Association Name="tblUser_tblRezerveTicket" Member="tblUser" ThisKey="RezerverID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoomFloor" Member="tblRoomFloors">
+    <Type Name="tblRoomFloor">
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomFloorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblRoomFloor_tblRoom" Member="tblRooms" ThisKey="RoomFloorID" OtherKey="RoomFloorID" Type="tblRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRooms" Member="tblRooms">
+    <Type Name="tblRoom">
+      <Column Name="RoomID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomBed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceOfPerNight" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RoomStatuse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomFloorID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="tblRoom_tblEECus" Member="tblEECus" ThisKey="RoomID" OtherKey="RoomID" Type="tblEECus" />
+      <Association Name="tblRoom_tblRezerveRoom" Member="tblRezerveRooms" ThisKey="RoomID" OtherKey="RoomID" Type="tblRezerveRoom" />
+      <Association Name="tblRoomFloor_tblRoom" Member="tblRoomFloor" ThisKey="RoomFloorID" OtherKey="RoomFloorID" Type="tblRoomFloor" IsForeignKey="true" />
+      <Association Name="tblRoomState_tblRoom" Member="tblRoomState" ThisKey="RoomStatuse" OtherKey="StatID" Type="tblRoomState" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tblRoomType_tblRoom" Member="tblRoomType" ThisKey="RoomType" OtherKey="RoomTypeID" Type="tblRoomType" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoomState" Member="tblRoomStates">
+    <Type Name="tblRoomState">
+      <Column Name="StatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomStatuseDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblRoomState_tblRoom" Member="tblRooms" ThisKey="StatID" OtherKey="RoomStatuse" Type="tblRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoomTypes" Member="tblRoomTypes">
+    <Type Name="tblRoomType">
+      <Column Name="RoomTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomTypeDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblRoomType_tblRoom" Member="tblRooms" ThisKey="RoomTypeID" OtherKey="RoomType" Type="tblRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblServicesDef" Member="tblServicesDefs">
+    <Type Name="tblServicesDef">
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpireBit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FromCityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ToCityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitTicketPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="tblServicesDef_tblRezerveTicket" Member="tblRezerveTickets" ThisKey="ServiceID" OtherKey="ServiceID" Type="tblRezerveTicket" />
+      <Association Name="tblCountryCity_tblServicesDef" Member="tblCountryCity" ThisKey="FromCityID" OtherKey="CountryCityID" Type="tblCountryCity" IsForeignKey="true" />
+      <Association Name="tblCountryCity_tblServicesDef1" Member="tblCountryCity1" ThisKey="ToCityID" OtherKey="CountryCityID" Type="tblCountryCity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsers" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UsePassChar" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NameCS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SnameCS" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserMail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UserWebSite" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblUser_tblCustomerPayment" Member="tblCustomerPayments" ThisKey="UserID" OtherKey="CustomerUserID" Type="tblCustomerPayment" />
+      <Association Name="tblUser_tblEECus" Member="tblEECus" ThisKey="UserID" OtherKey="CustomerID" Type="tblEECus" />
+      <Association Name="tblUser_tblRezerveRoom" Member="tblRezerveRooms" ThisKey="UserID" OtherKey="CustomerID" Type="tblRezerveRoom" />
+      <Association Name="tblUser_tblRezerveTicket" Member="tblRezerveTickets" ThisKey="UserID" OtherKey="RezerverID" Type="tblRezerveTicket" />
+      <Association Name="tblUserType_tblUser" Member="tblUserType" ThisKey="UserTypeID" OtherKey="UsertypeID" Type="tblUserType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserTypes" Member="tblUserTypes">
+    <Type Name="tblUserType">
+      <Column Name="UsertypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserTypeDescription" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="tblUserType_tblUser" Member="tblUsers" ThisKey="UsertypeID" OtherKey="UserTypeID" Type="tblUser" />
+    </Type>
+  </Table>
+</Database>
